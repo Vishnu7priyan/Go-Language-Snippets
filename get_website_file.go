@@ -16,5 +16,13 @@ if err != nil{
 bodyLen := 1300 //Change the length based on your requirement
 webOut := make([]byte,bodyLen)
 r.Body.Read(webOut)
-        
+
+	//writing the content in local file
+file,err := os.Create("index.html")
+if err != nil {
+fmt.Println("Error")
+}
+defer file.Close()
+file.Write(webOut)
+fmt.Println("Done")
 }
