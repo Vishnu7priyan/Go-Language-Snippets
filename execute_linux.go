@@ -13,7 +13,7 @@ func main() {
         fmt.Println(err)
     }
 }
-
+//////////////////////////////////////////////
 package main
 import (
     "fmt"
@@ -30,3 +30,19 @@ func main() {
 
   }
 
+/////////////////////////////////////////////
+//Custom shell scripts
+package main
+
+import (
+    "fmt"
+    "os/exec"
+)
+
+func main() {
+    cmd := exec.Command("PATH_HERE")
+    err := cmd.Run()
+    if err != nil {
+        fmt.Println(err)
+    }
+}
