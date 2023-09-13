@@ -14,5 +14,19 @@ func main() {
     }
 }
 
+package main
+import (
+    "fmt"
+    "os/exec"
+    "runtime"
+)
+func main() {
+    out, err := exec.Command("ls").Output()
+    if err != nil {
+        fmt.Printf("%s", err)
+    }
+    output := string(out[:])
+    fmt.Println(output)
 
+  }
 
