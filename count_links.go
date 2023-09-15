@@ -12,5 +12,8 @@ func main() {
    data, err := ioutil.ReadAll(resp.Body) 
    if err != nil {   
       panic(err)  }
-//some more code
+
+   stringBody := string(data)
+   numLinks := strings.Count(stringBody, "<a") 
+   fmt.Printf("Packt Publishing homepage has %d links!\n", numLinks)
 }
