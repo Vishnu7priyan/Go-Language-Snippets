@@ -20,7 +20,8 @@ func main(){
 
 	fmt.Print("HI %T ",a)
 
-	fmt.Println(&b) }
+	fmt.Println(&b) 
+cname := "works for variable not constants"}
 
 
 
