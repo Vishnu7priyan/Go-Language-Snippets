@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-    // Make an HTTP GET request
     response, err := http.Get("https://web-check.as93.net/.netlify/functions/dns?url=https://ikea.com")
     if err != nil {
         log.Fatal(err)
@@ -24,4 +23,11 @@ func main() {
             log.Fatal(err)
         }
 
+        var jsonData interface{}
+
+        if err := json.Unmarshal(responseBody, &jsonData); err != nil {
+            log.Fatal(err)
+        }
+
+      
 }
