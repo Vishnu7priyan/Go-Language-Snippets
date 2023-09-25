@@ -12,4 +12,5 @@ func main(){
  fmt.Println(s1)
  fmt.Println(s1.name)
  fmt.Println(s2)
+ fmt.Printf("Name of the student with 101 roll no is %v\n",s1.name)
 }
