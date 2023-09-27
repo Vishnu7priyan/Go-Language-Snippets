@@ -22,5 +22,20 @@ func main() {
             log.Fatal(err)
         }
 
-       
+        var jsonData interface{}
+
+        if err := json.Unmarshal(responseBody, &jsonData); err != nil {
+            log.Fatal(err)
+        }
+
+        formattedJSON, err := json.MarshalIndent(jsonData, "", "    ")
+        if err != nil {
+            log.Fatal(err)
+        }
+
+        fmt.Println("JSON Response:")
+        fmt.Println(string(formattedJSON))
+    } else {
+        log.Printf("GET request failed with status: %s\n", response.Status)
+    }
 }
