@@ -9,3 +9,8 @@ func init() {
  fmt.Println("Usage: ./example2 <url>") 
 os.Exit(-1)  } 
 }  
+func main() { 
+ r, err := http.Get(os.Args[1])
+  if err != nil { 
+ fmt.Println(err)
+ return  } 
