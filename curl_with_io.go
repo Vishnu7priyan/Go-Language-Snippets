@@ -14,3 +14,8 @@ func main() {
   if err != nil { 
  fmt.Println(err)
  return  } 
+ io.Copy(os.Stdout, r.Body) 
+ if err := r.Body.Close(); err != nil { 
+fmt.Println(err) 
+ } 
+}
