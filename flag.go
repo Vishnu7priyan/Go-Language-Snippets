@@ -14,5 +14,6 @@ func main() {
 
     flag.Parse()
 
-    
+    fmt.Printf("Name: %s\n", yourname)
+    fmt.Printf("Age: %d\n", age)
 }
