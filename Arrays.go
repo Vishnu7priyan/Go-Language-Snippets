@@ -11,3 +11,6 @@ array[2] = 35;
 var array1 [5]string 
 array2 := [5]string{"Red", "Blue", "Green", "Yellow", "Pink"}
 array1 = array2
+
+var array [4][2]int
+array := [4][2]int{{10, 11}, {20, 21}, {30, 31}, {40, 41}}
