@@ -11,4 +11,6 @@ func main() {
     pastTime := currentTime.Add(-1 * time.Hour)
     fmt.Println("Future Time:", Tomm)
     fmt.Println("Past Time:", pastTime)
+    Sleephrs := 10* time.Hour
+    time.Sleep(Sleephrs)
 }
