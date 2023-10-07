@@ -12,5 +12,15 @@ func main() {
     if err != nil {
         fmt.Println("Error :", err)
     }
-    defer db.Close()
+    createTable := `
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT,
+            email TEXT
+        )
+    `
+    _, err = db.Exec(createTable)
+    if err != nil {
+        fmt.Println("Error :", err)
+    }
 }
