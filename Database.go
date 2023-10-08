@@ -30,7 +30,12 @@ func main() {
         fmt.Println("Error updating data:", err)
         return
     }
-    
+    deleteSQL := "DELETE FROM users WHERE username = ?"
+    _, err = db.Exec(deleteSQL, "vishnu")
+    if err != nil {
+        fmt.Println("Error deleting data:", err)
+        return
+    }
 
     
 }
