@@ -23,4 +23,14 @@ func main() {
     if err != nil {
         fmt.Println("Error :", err)
     }
+    
+    updateSQL := "UPDATE users SET email = ? WHERE username = ?"
+    _, err = db.Exec(updateSQL, "test@example.com", "vishnu")
+    if err != nil {
+        fmt.Println("Error updating data:", err)
+        return
+    }
+    
+
+    
 }
