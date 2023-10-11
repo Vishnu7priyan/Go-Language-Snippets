@@ -21,5 +21,13 @@ func main() {
 
     document := bson.D{{"name", "John Doe"}, {"age", 30}}
 
-    
+    _, err = collection.InsertOne(context.TODO(), document)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    defer client.Disconnect(context.TODO())
+
+    fmt.Println("Document inserted successfully!")
 }
