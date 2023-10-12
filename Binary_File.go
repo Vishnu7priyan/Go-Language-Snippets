@@ -11,5 +11,12 @@ func main() {
 		panic(err)
 	}
 	defer file.Close()
-	
+	fileInfo, _ := file.Stat()
+	fileSize := fileInfo.Size()
+	buffer := make([]byte, fileSize)
+
+	_, err = file.Read(buffer)
+	if err != nil {
+		panic(err)
+	}
 }
