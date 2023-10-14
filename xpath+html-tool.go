@@ -15,7 +15,20 @@ func GetAllUrls(user_input string) {
     if err != nil {
         panic(err)
     }
-    defer resp.Body.Close() // Close the response body to avoid resource leaks.
+    defer resp.Body.Close()
+     data, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+    stringBody := string(data)
 
+    re := regexp.MustCompile(`<a.*href\s*=\s*["'](https?://[^"']+)["'].*>`)
+    links := re.FindAllStringSubmatch(stringBody, -1)
+
+    fmt.Println(len(links))
+    for _, link := range links {
+        fmt.Println(link[1])
+    }
+    
    
 }
