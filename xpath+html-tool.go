@@ -28,6 +28,7 @@ func GetAllUrls(user_input string) {
     fmt.Println(len(links))
     for _, link := range links {
         fmt.Println(link[1])
+        
     }
 
  command := "echo"
@@ -37,6 +38,14 @@ func GetAllUrls(user_input string) {
     arg4 := "attribs"
     arg5 := "href"
     arg6 := "echo"
+cmd := exec.Command(command,arg6, arg1, arg2, arg3, arg4, arg5)
 
+    output, err := cmd.CombinedOutput()
+    if err != nil {
+        panic(err)
+    }
+
+    
+   
     
 }
