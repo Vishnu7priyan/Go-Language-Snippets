@@ -29,6 +29,14 @@ func GetAllUrls(user_input string) {
     for _, link := range links {
         fmt.Println(link[1])
     }
+
+ command := "echo"
+    arg1 := "https://" + user_input
+    arg2 := "|"
+    arg3 := "html-tool"
+    arg4 := "attribs"
+    arg5 := "href"
+    arg6 := "echo"
+
     
-   
 }
