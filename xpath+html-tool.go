@@ -45,7 +45,12 @@ cmd := exec.Command(command,arg6, arg1, arg2, arg3, arg4, arg5)
         panic(err)
     }
 
-    
+    final_comm := string(output)
+    executing := execute.ExecTask{
+        Command: final_comm,
+        Shell: true,}
+    res , _ := executing.Execute()
+    fmt.Println(res.Stdout)
    
     
 }
