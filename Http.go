@@ -21,5 +21,11 @@ func main(){
 	fmt.Println("GET Response:")
 	fmt.Println(string(body))
 
-  
+  jsonData := `{"title": "Sample Post", "body": "This is a sample", "userId": 1}`
+	resp, err := http.Post(url, "application/json", bytes.NewBuffer([]byte(jsonData))
+	if err != nil {
+		fmt.Println("Error:", err)
+		return
+	}
+	fmt.Println("POST Response Status:", resp.Status)
   }
