@@ -14,5 +14,14 @@ func main() {
     }
     defer file.Close() 
 
+    buffer := make([]byte, 1024)
+
+    for {
+        n, err := file.Read(buffer)
+        if err != nil {
+            break
+        }
+        fmt.Print(string(buffer[:n]))
+    }
 }
 
